@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    MVVM模型:
+    1. M: Model模型: 对应data中的数据 ---》 Plain JavaScript Objects
+    2. V: View视图: 模板 ---》 DOM
+    3. VM: ViewModel视图模型: Vue实例对象
+
+    data中所有的属性, 最后都出现在了vm身上
+    vm身上所有的属性 及 Vue原型上所有属性, 在Vue模板中都可以直接使用
+
+    <div id="root">
+        <h1>name:{{name}}</h1>
+        <h1>add:{{address}}</h1>
+        <h1>test:{{$options}}</h1>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        const vm = new Vue({
+            el: '#root',
+            data: {       // data里的属性方法最终出现在 vm 上  vm身上有的全都能在插值语法{{}}中使用
+                name: 'sgg',
+                address: 'bj',
+            }
+        })
+        console.log(vm);
+    </script>
+</body>
+
+</html>

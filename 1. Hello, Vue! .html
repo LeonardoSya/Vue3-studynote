@@ -1,0 +1,66 @@
+<!--
+ * @Author: LeonardoSya 2246866774@qq.com
+ * @Date: 2023-04-08 22:28:42
+ * @LastEditors: LeonardoSya 2246866774@qq.com
+ * @LastEditTime: 2023-08-26 16:44:26
+ * @FilePath: \Vue\1. Hello, Vue! .html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+1. 想要Vue工作, 就必须创建一个Vue实例, 并且要传入一个配置对象
+2. root容器里的代码依然附合html规范, 只不过混入了一些特殊的Vue语法
+3. root容器里的代码被称为【Vue模板】 模板经过解析变成html片段再放回来
+
+1. 容器和Vue实例一一对应
+2. 注意区分: js表达式 和 js代码(语句)
+表达式: 一个表达式会产生一个值, 可以放在任何一个需要值的地方
+a
+a+b
+demo(1)
+x === y ? 'a' : 'b'
+js代码(语句)
+if(){}
+for(){}
+3. 实际开发中只有一个Vue实例, 并且会配合组件一起使用
+4. {{xxx}}中xxx要写js表达式, 且xxx可以自动读取到data中的所有属性
+5. 一旦data中的数据发生改变, 那么模板(页面)中用到该数据的地方也会自动更新
+
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        <h1>Hello, {{name.toUpperCase()}}</h1>
+    </div>
+
+    <div id="app"><button @click="count++">Count is: {{ count }} </button></div>
+    <script type="module">
+
+        // 创建Vue实例
+        new Vue({
+            el: '#root',  // el用于指定当前Vue实例为哪个容器服务，值通常为css选择器字符串
+            data: {  // data中用于存储数据，数据供el所指定的容器去使用，值我们暂时先写成一个对象
+                name: 'bjfu'
+            }
+        });
+
+
+        import { createApp } from 'vue';
+        createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
