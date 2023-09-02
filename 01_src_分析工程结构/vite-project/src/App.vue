@@ -2,7 +2,7 @@
  * @Author: LeonardoSya 2246866774@qq.com
  * @Date: 2023-08-30 14:41:15
  * @LastEditors: LeonardoSya 2246866774@qq.com
- * @LastEditTime: 2023-09-02 13:53:59
+ * @LastEditTime: 2023-09-02 14:35:41
  * @FilePath: \Vue\01_src_分析工程结构\vite-project\src\App.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -15,8 +15,8 @@
   <h3>工作：工种{{ job.type }} 工薪{{ job.salary }}</h3>
 </template>
 
-<script eslint-disable>
-import { h } from 'vue';
+<script eslint-disable lang="ts">
+// import { h } from 'vue';
 
 import { ref } from 'vue';    // reference引用 implement实现
 
