@@ -1,7 +1,15 @@
+<!--
+ * @Author: LeonardoSya 2246866774@qq.com
+ * @Date: 2023-09-02 14:12:40
+ * @LastEditors: LeonardoSya 2246866774@qq.com
+ * @LastEditTime: 2023-09-09 07:29:28
+ * @FilePath: \Vue\02_src_reactive函数\vite-project\src\App.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <script lang="ts">
 
 import { reactive } from 'vue';
-// 
+
 export default {
   name: 'App',
   setup() {
@@ -47,7 +55,7 @@ export default {
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-}
+} 
 
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
