@@ -1,0 +1,67 @@
+<!--
+ * @Author: LeonardoSya 2246866774@qq.com
+ * @Date: 2023-11-01 21:30:06
+ * @LastEditors: LeonardoSya 2246866774@qq.com
+ * @LastEditTime: 2023-11-02 11:54:47
+ * @FilePath: \Vue\03_src_响应式原理Proxy对象\vite-project\src\Vue3响应式原理.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        background-color: black
+    }
+</style>
+
+<body>
+
+    <script text="javascript">
+
+        // #region
+        // 折叠小技巧
+        // #endregion
+
+        const person = {
+            name: 'Leo',
+            age: 19
+        }
+
+
+        // 模拟Vue3响应式
+        // Proxy:代理  能够让p映射对person的操作,从而拦截对象中任意属性的变化
+        // Reflect:反射  对源对象的属性进行操作
+        //#region
+        const p = new Proxy(person, {
+
+            get(target, propName) {
+                console.log(`${target}的${propName}被读取了`, target);
+                return Reflect.get(target, propName);
+            },
+
+            set(target, propName, value) {
+                console.log(`${target}的${propName}被设置为${value}`);
+                Reflect.set(target, propName, value);
+            },
+
+            deleteProperty(target, propName) {
+                console.log(`${target}的${propName}被删除了`);
+                return Reflect.deleteProperty(target, propName)
+            }
+
+        })
+        //#endregion
+
+        const obj = { a: 1, b: 2 };
+
+    </script>
+</body>
+
+</html>

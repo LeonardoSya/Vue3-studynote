@@ -2,10 +2,10 @@
  * @Author: LeonardoSya 2246866774@qq.com
  * @Date: 2023-10-10 08:17:09
  * @LastEditors: LeonardoSya 2246866774@qq.com
- * @LastEditTime: 2023-10-10 08:24:06
+ * @LastEditTime: 2023-10-10 16:07:27
  * @FilePath: \Vue\03_src_响应式原理Proxy对象\vite-project\src\App.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
+--> 
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 
@@ -21,7 +21,6 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
